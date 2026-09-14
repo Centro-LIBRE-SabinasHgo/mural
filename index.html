@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#7b123d" />
+  <meta name="description" content="Mural de Derechos de las Mujeres del Centro LIBRE para las Mujeres de Sabinas Hidalgo." />
+  <title>Mural de Derechos de las Mujeres | Centro LIBRE Sabinas Hidalgo</title>
+  <style>
+    :root{
+      --vino:#7b123d;
+      --vino-2:#941c4d;
+      --rosa:#f6c9da;
+      --rosa-suave:#fff6fa;
+      --rosa-medio:#e99aba;
+      --oro:#d5a934;
+      --azul:#57c8f2;
+      --verde:#2f7d45;
+      --tinta:#351a29;
+      --blanco:#fff;
+      --sombra:0 18px 45px rgba(82,20,49,.12);
+      --radio:26px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--tinta);background:linear-gradient(180deg,#fff8fb 0%,#fff 55%,#fff8fb 100%);line-height:1.6}
+    img{display:block;max-width:100%}
+    a{color:inherit}
+    .wrap{width:min(calc(100% - 32px),var(--max));margin-inline:auto}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(255,248,251,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(123,18,61,.09)}
+    .nav-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:14px;text-decoration:none;font-weight:850;color:var(--vino)}
+    .brand img{width:180px;max-height:50px;object-fit:contain;object-position:left center}
+    .nav-links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+    .nav-links a{text-decoration:none;font-size:.92rem;font-weight:750;color:#5f2942}
+    .nav-links .mini-btn{padding:9px 14px;border-radius:999px;background:var(--vino);color:#fff}
+    .hero{padding:28px 0 14px}
+    .hero-card{position:relative;overflow:hidden;border-radius:32px;box-shadow:var(--sombra);background:#f3c4d5}
+    .hero-card img{width:100%;aspect-ratio:16/9;object-fit:cover}
+    .hero-overlay{position:absolute;inset:auto 0 0 0;padding:80px 38px 32px;background:linear-gradient(transparent,rgba(55,7,31,.76));color:#fff}
+    .eyebrow{font-size:.78rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#8c3156}
+    .hero .eyebrow{color:#ffd6e4}
+    h1,h2,h3{line-height:1.12;margin:0}
+    h1{font-size:clamp(2rem,5vw,4.8rem);max-width:900px}
+    h2{font-size:clamp(1.8rem,3vw,3rem);color:var(--vino);margin-top:8px}
+    h3{font-size:1.18rem;color:var(--vino)}
+    .hero p{margin:.8rem 0 0;max-width:760px;font-size:clamp(1rem,1.6vw,1.2rem)}
+    section{padding:78px 0}
+    .intro-grid,.symbol-grid,.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:center}
+    .card{background:#fff;border:1px solid rgba(123,18,61,.08);border-radius:var(--radio);padding:28px;box-shadow:var(--sombra)}
+    .history-photo{border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra)}
+    .history-photo img{width:100%;min-height:420px;object-fit:cover}
+    .process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:28px}
+    .process-card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:var(--sombra);border:1px solid rgba(123,18,61,.08)}
+    .process-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+    .process-card figcaption{padding:14px 16px 18px;font-weight:800;color:var(--vino);text-align:center}
+    .section-head{margin-bottom:30px;max-width:820px}
+    .section-head p{font-size:1.04rem;color:#684457}
+    .rights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .right-card{overflow:hidden;padding:0;transition:transform .2s ease, box-shadow .2s ease}
+    .right-card:hover{transform:translateY(-5px);box-shadow:0 22px 55px rgba(82,20,49,.17)}
+    .right-card img{width:100%;aspect-ratio:1/1;object-fit:cover}
+    .right-body{padding:20px}
+    .right-num{display:inline-grid;place-items:center;width:35px;height:35px;border-radius:50%;background:var(--vino);color:#fff;font-weight:900;margin-bottom:12px}
+    .right-body p{margin:.7rem 0 0;color:#684457;font-size:.95rem}
+    .symbols{background:linear-gradient(135deg,#fff0f6,#fff)}
+    .symbol-grid{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch}
+    .symbol-card{background:#fff;border-radius:24px;padding:24px;border-top:6px solid var(--rosa-medio);box-shadow:var(--sombra)}
+    .symbol-icon{font-size:2.1rem;margin-bottom:10px}
+    .board{background:var(--vino);color:#fff;border-radius:32px;padding:44px;box-shadow:var(--sombra);position:relative;overflow:hidden}
+    .board:after{content:"";position:absolute;width:240px;height:240px;border:28px solid rgba(87,200,242,.25);transform:rotate(45deg);right:-100px;top:-90px}
+    .board h2{color:#fff;max-width:880px}
+    .board p{max-width:790px;color:#ffe8f1}
+    .question{font-size:clamp(1.5rem,3vw,2.65rem);font-weight:900;margin:22px 0;color:#fff}
+    .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .poster{background:#fff;border-radius:20px;padding:12px;box-shadow:var(--sombra);overflow:hidden}
+    .poster img{width:100%;height:330px;object-fit:contain;background:#f7f1f4;border-radius:13px}
+    .contacts{background:#fff1f6}
+    .contact-grid{align-items:stretch}
+    .contact-card{display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+    .contact-card p{color:#654355}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:900;border-radius:999px;padding:15px 20px;transition:transform .15s ease,filter .15s ease}
+    .btn:hover{transform:translateY(-2px);filter:brightness(.98)}
+    .btn-whatsapp{background:#198754;color:#fff}
+    .btn-call{background:var(--vino);color:#fff}
+    .btn-outline{border:2px solid var(--vino);color:var(--vino);background:#fff}
+    .cartilla-card{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center;background:linear-gradient(135deg,#fff,#fff0f6);border-radius:32px;padding:34px;box-shadow:var(--sombra)}
+    .cartilla-badge{display:grid;place-items:center;min-height:260px;border-radius:24px;background:var(--vino);color:#fff;text-align:center;padding:30px;font-weight:900;font-size:1.5rem}
+    .credits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .credit{background:#fff;border-radius:20px;padding:20px;border-left:5px solid var(--oro);box-shadow:0 10px 30px rgba(82,20,49,.08)}
+    footer{padding:32px 0 50px;color:#76566a;text-align:center}
+    .footer-logos{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:18px}
+    .footer-logos img{max-height:58px;width:auto;max-width:260px;object-fit:contain}
+    .small{font-size:.9rem;color:#76566a}
+    @media (max-width:900px){
+      .nav-links{display:none}
+      .intro-grid,.contact-grid,.cartilla-card{grid-template-columns:1fr}
+      .symbol-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .rights,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .process-grid{grid-template-columns:1fr}
+      .hero-overlay{padding:70px 22px 22px}
+      .brand img{width:150px}
+    }
+    @media (max-width:620px){
+      section{padding:56px 0}
+      .wrap{width:min(calc(100% - 22px),var(--max))}
+      .hero{padding-top:12px}
+      .hero-card{border-radius:22px}
+      .hero-card img{aspect-ratio:4/5;object-position:center}
+      .hero-overlay{padding:90px 18px 20px}
+      .rights,.gallery,.symbol-grid,.credits{grid-template-columns:1fr}
+      .right-card{display:grid;grid-template-columns:120px 1fr;align-items:stretch}
+      .right-card img{height:100%;aspect-ratio:auto}
+      .right-body{padding:16px}
+      .poster img{height:auto;max-height:520px}
+      .board{padding:30px 22px;border-radius:24px}
+      .cartilla-card{padding:24px}
+      .history-photo img{min-height:300px}
+    }
+
+    .cta-strip{background:var(--vino);color:#fff;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.15)}
+    .cta-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .cta-strip strong{font-size:1.02rem}
+    .cta-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .cta-actions .btn{padding:11px 16px}
+    .btn-light{background:#fff;color:var(--vino)}
+    .btn-gold{background:var(--oro);color:#3a1b25}
+    .final-cta{padding:72px 0;background:linear-gradient(135deg,var(--vino),#a22459);color:#fff}
+    .final-cta-box{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .final-cta h2{color:#fff;font-size:clamp(2rem,4vw,4rem)}
+    .final-cta p{color:#ffe9f2;font-size:1.08rem;max-width:760px}
+    .final-cta-actions{display:flex;flex-direction:column;gap:12px}
+    .final-cta .btn{width:100%;font-size:1.02rem;padding:17px 20px}
+    .floating-actions{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;flex-direction:column;gap:10px}
+    .floating-actions a{box-shadow:0 14px 32px rgba(67,17,41,.25)}
+    @media (max-width:900px){.final-cta-box{grid-template-columns:1fr}.cta-strip-inner{align-items:flex-start}}
+    @media (max-width:620px){.cta-strip{display:none}.floating-actions{left:10px;right:10px;bottom:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px}.floating-actions .btn{padding:12px 8px;font-size:.82rem}body{padding-bottom:72px}}
+
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#inicio" aria-label="Inicio">
+        <img src="logo-centro-libre.png" alt="Centro LIBRE para las Mujeres" />
+      </a>
+      <div class="nav-links">
+        <a href="#historia">Historia</a>
+        <a href="#derechos">15 derechos</a>
+        <a href="#simbolos">Símbolos</a>
+        <a href="#galeria">Galería</a>
+        <a class="mini-btn" href="#participa">Participa</a>
+      </div>
+    </div>
+  </nav>
+  <div class="cta-strip">
+    <div class="wrap cta-strip-inner">
+      <strong>¿Necesitas orientación o quieres participar? Estamos para ti.</strong>
+      <div class="cta-actions">
+        <a class="btn btn-light" href="tel:+528115887607">Llamar al Centro LIBRE</a>
+        <a class="btn btn-gold" target="_blank" rel="noopener" href="https://wa.me/528241054652?text=Hola%21%20Quiero%20ser%20Tejedora%20de%20la%20Patria">Quiero ser Tejedora</a>
+      </div>
+    </div>
+  </div>
+
+
+  <main id="inicio">
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero-card">
+          <img src="portada-provisional.png" alt="Ilustración provisional del mural de derechos de las mujeres en Sabinas Hidalgo" />
+          <div class="hero-overlay">
+            <div class="eyebrow">Centro LIBRE para las Mujeres de Sabinas Hidalgo</div>
+            <h1>Un mural para conocer, reconocer y hacer nuestros los derechos de las mujeres</h1>
+            <p>Cada flor representa un derecho. Cada trazo guarda una voz. Conoce el mural, acércate al Centro LIBRE y forma parte de una red de mujeres que se acompañan en Sabinas Hidalgo.</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="historia">
+      <div class="wrap intro-grid">
+        <div>
+          <div class="eyebrow">La historia del mural</div>
+          <h2>Un mural construido entre muchas</h2>
+          <p>El mural nació desde el Centro LIBRE para las Mujeres de Sabinas Hidalgo como una manera distinta de acercar los derechos de las mujeres al espacio público.</p>
+          <p>Antes de comenzar a pintar, alumnas de la <strong>Preparatoria No. 5 de la UANL</strong> participaron en actividades para conocer la historia de nuestros derechos, reflexionar sobre aquellos que forman parte de su vida cotidiana y expresar, mediante dibujos, frases y carteles, cómo imaginan una comunidad en la que las mujeres puedan vivir con mayor libertad e igualdad.</p>
+          <p>De ese proceso surgieron colores, formas, ideas y símbolos que fueron llevados al muro por la muralista <strong>Griselda Flores Treviño</strong>. Las 15 flores representan los 15 derechos incluidos en la Cartilla de Derechos de las Mujeres. Al centro, un pizarrón convierte al mural en un espacio vivo, donde cada mujer puede dejar también su propia voz.</p>
+          <p>El mural no busca solamente ser observado. Busca provocar conversación, acercar información y recordarnos que nuestros derechos se conocen, se ejercen, se defienden y también se construyen en comunidad.</p>
+        </div>
+        <div class="history-photo">
+          <img src="proceso-pintura.jpg" alt="Muralista trabajando en la elaboración del mural" />
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="process-grid" aria-label="Proceso de construcción del mural">
+          <figure class="process-card"><img src="proceso-taller.jpg" alt="Alumnas de la Preparatoria No. 5 UANL participando en el taller previo al mural"><figcaption>Primero, imaginar juntas</figcaption></figure>
+          <figure class="process-card"><img src="proceso-pintura.jpg" alt="Proceso de pintura del mural"><figcaption>Después, llevar las ideas al muro</figcaption></figure>
+          <figure class="process-card"><img src="proceso-avance.jpg" alt="Avance del mural de derechos de las mujeres"><figcaption>Y verlo florecer</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="derechos">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">15 flores · 15 derechos</div>
+          <h2>Conoce los derechos que florecen en este mural</h2>
+          <p>Las flores siguen el orden de la Cartilla de Derechos de las Mujeres. Cada una representa un derecho que debe ser conocido, ejercido y garantizado.</p>
+        </div>
+        <div class="rights">
+          <article class="card right-card"><img src="flor-01.jpg" alt="Flor 1 del mural"><div class="right-body"><span class="right-num">1</span><h3>Derecho a ser libre y ser feliz</h3><p>Tienes derecho a decidir sobre tu vida, tu cuerpo y tus sueños, a vivir con dignidad y a elegir el camino que quieres construir.</p></div></article>
+          <article class="card right-card"><img src="flor-02.jpg" alt="Flor 2 del mural"><div class="right-body"><span class="right-num">2</span><h3>Derecho a vivir en familia, en paz y con bienestar</h3><p>Toda mujer tiene derecho a vivir en un entorno seguro, respetuoso y libre de violencias, con condiciones que permitan desarrollarse plenamente.</p></div></article>
+          <article class="card right-card"><img src="flor-03.jpg" alt="Flor 3 del mural"><div class="right-body"><span class="right-num">3</span><h3>Derecho a la educación</h3><p>Tienes derecho a estudiar y desarrollar tus capacidades en condiciones de igualdad, sin que tu edad, origen o situación económica sean una barrera.</p></div></article>
+          <article class="card right-card"><img src="flor-04.jpg" alt="Flor 4 del mural"><div class="right-body"><span class="right-num">4</span><h3>Derecho a la salud</h3><p>Tienes derecho a recibir atención médica integral, digna y de calidad, incluida la salud física, mental, sexual y reproductiva.</p></div></article>
+          <article class="card right-card"><img src="flor-05.jpg" alt="Flor 5 del mural"><div class="right-body"><span class="right-num">5</span><h3>Derecho a la vivienda</h3><p>Tienes derecho a una vivienda digna, segura y adecuada, con acceso a servicios y sin vivir bajo amenaza de desalojo o discriminación.</p></div></article>
+          <article class="card right-card"><img src="flor-06.jpg" alt="Flor 6 del mural"><div class="right-body"><span class="right-num">6</span><h3>Derechos comunitarios</h3><p>Tienes derecho a participar en tu comunidad, acceder a servicios públicos y formar parte de las decisiones que afectan el lugar donde vives.</p></div></article>
+          <article class="card right-card"><img src="flor-07.jpg" alt="Flor 7 del mural"><div class="right-body"><span class="right-num">7</span><h3>Derecho a una identidad y a tener autonomía</h3><p>Tienes derecho a ser quien eres, tomar decisiones sobre tu cuerpo y tu vida y desarrollar libremente tu personalidad.</p></div></article>
+          <article class="card right-card"><img src="flor-08.jpg" alt="Flor 8 del mural"><div class="right-body"><span class="right-num">8</span><h3>Derecho a la cultura</h3><p>Tienes derecho a crear, disfrutar, preservar y compartir la cultura, las tradiciones y las expresiones que forman parte de tu identidad.</p></div></article>
+          <article class="card right-card"><img src="flor-09.jpg" alt="Flor 9 del mural"><div class="right-body"><span class="right-num">9</span><h3>Derecho a la libre expresión y al libre tránsito</h3><p>Tienes derecho a ocupar el espacio público, caminar con seguridad, expresar tus ideas y organizarte sin miedo.</p></div></article>
+          <article class="card right-card"><img src="flor-10.jpg" alt="Flor 10 del mural"><div class="right-body"><span class="right-num">10</span><h3>Acceso y derecho a la justicia</h3><p>Tienes derecho a ser escuchada, recibir atención digna y acceder a procedimientos gratuitos y efectivos cuando tus derechos hayan sido vulnerados.</p></div></article>
+          <article class="card right-card"><img src="flor-11.jpg" alt="Flor 11 del mural"><div class="right-body"><span class="right-num">11</span><h3>Derecho a la participación política</h3><p>Tienes derecho a votar, ser votada, organizarte, opinar y participar en las decisiones de tu comunidad y de tu país.</p></div></article>
+          <article class="card right-card"><img src="flor-12.jpg" alt="Flor 12 del mural"><div class="right-body"><span class="right-num">12</span><h3>Derechos digitales</h3><p>Tienes derecho a acceder a internet, proteger tus datos y participar en espacios digitales sin violencia, amenazas ni acoso.</p></div></article>
+          <article class="card right-card"><img src="flor-13.jpg" alt="Flor 13 del mural"><div class="right-body"><span class="right-num">13</span><h3>Derechos de las niñas y las adolescentes</h3><p>Las niñas y adolescentes tienen todos estos derechos y deben poder estudiar, descansar, expresarse, participar, imaginar y crecer con libertad.</p></div></article>
+          <article class="card right-card"><img src="flor-14.jpg" alt="Flor 14 del mural"><div class="right-body"><span class="right-num">14</span><h3>Derecho a un trabajo digno y a un salario igualitario</h3><p>Tienes derecho a elegir tu trabajo, recibir condiciones laborales dignas y obtener el mismo salario por el mismo trabajo.</p></div></article>
+          <article class="card right-card"><img src="flor-15.jpg" alt="Flor 15 del mural"><div class="right-body"><span class="right-num">15</span><h3>Derecho a una vida libre de violencias</h3><p>Tienes derecho a vivir sin violencia física, psicológica, sexual, económica, patrimonial, digital o de cualquier otra forma, en todos los espacios de tu vida.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="simbolos" class="symbols">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Los símbolos del mural</div>
+          <h2>Todo lo que ves cuenta una parte de la historia</h2>
+        </div>
+        <div class="symbol-grid">
+          <article class="symbol-card"><div class="symbol-icon">🌸</div><h3>Las flores</h3><p>Las 15 flores representan los 15 derechos de la Cartilla de Derechos de las Mujeres y recuerdan que conocer nuestros derechos también es una forma de hacerlos florecer.</p></article>
+          <article class="symbol-card"><div class="symbol-icon">🌳</div><h3>Las anacahuitas</h3><p>Las anacahuitas representan a las mujeres sabinenses. Son árboles que resisten el calor, el frío y las condiciones cambiantes de nuestra región, y aun así continúan creciendo y floreciendo. En ellas reconocemos la fortaleza, la resistencia y la capacidad de las mujeres de Sabinas Hidalgo para sostenerse, adaptarse y salir adelante.</p></article>
+          <article class="symbol-card"><div class="symbol-icon">🫀</div><h3>Los corazones</h3><p>Los corazones anatómicos recuerdan que los derechos se viven en el cuerpo y en la vida cotidiana. Hablan de salud, decisiones, afectos, cuidados, seguridad y dignidad. De ellos nacen las anacahuitas porque una comunidad también crece desde la vida y los derechos de quienes la habitan.</p></article>
+          <article class="symbol-card"><div class="symbol-icon">◇</div><h3>El tejido del marco</h3><p>Los rombos que rodean el espacio central evocan un tejido. Representan los vínculos que se construyen entre mujeres y la manera en que, al entrelazar experiencias, saberes y apoyo, se fortalece la comunidad.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="board">
+          <div class="eyebrow" style="color:#ffd2e2">El pizarrón</div>
+          <h2>Este mural también necesita tu voz</h2>
+          <p>Cuando lo visites, encontrarás un pizarrón en el centro. Queremos que el mural siga cambiando con las voces de las mujeres que lo visiten.</p>
+          <div class="question">¿Qué derechos quieres ver florecer en Sabinas Hidalgo?</div>
+          <p>Escribe tu respuesta, deja tu mensaje y forma parte de una obra que seguirá creciendo con nuestra comunidad.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Voces que dieron origen al mural</div>
+          <h2>Carteles realizados por alumnas de la Preparatoria No. 5 UANL</h2>
+          <p>Estas piezas fueron realizadas por alumnas de la Preparatoria No. 5 UANL durante el proceso participativo que dio origen a colores, símbolos e ideas del mural.</p>
+        </div>
+        <div class="gallery">
+          <figure class="poster"><img src="cartel-4338.jpg" alt="Cartel realizado por alumnas de la Preparatoria No. 5 UANL durante el taller"></figure>
+          <figure class="poster"><img src="cartel-4339.jpg" alt="Cartel sobre derechos de las mujeres"></figure>
+          <figure class="poster"><img src="cartel-4343.jpg" alt="Cartel colectivo con flores y derechos"></figure>
+          <figure class="poster"><img src="cartel-4344.jpg" alt="Cartel sobre libertad y derechos"></figure>
+          <figure class="poster"><img src="cartel-4345.jpg" alt="Cartel sobre los derechos de las mujeres"></figure>
+          <figure class="poster"><img src="cartel-4346.jpg" alt="Cartel que expresa ideas de las jóvenes participantes"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="participa" class="contacts">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Participa y acércate</div>
+          <h2>El mural también puede ser un punto de encuentro</h2>
+        </div>
+        <div class="contact-grid">
+          <article class="card contact-card">
+            <div>
+              <h3>Quiero ser Tejedora de la Patria</h3>
+              <p>Conecta con otras mujeres, participa en tu comunidad y ayúdanos a acercar información, derechos y redes de apoyo.</p>
+              <p><strong>WhatsApp 824 105 4652</strong></p>
+            </div>
+            <a class="btn btn-whatsapp" target="_blank" rel="noopener" href="https://wa.me/528241054652?text=Hola%2C%20quiero%20ser%20Tejedora%20de%20la%20Patria%20y%20recibir%20informaci%C3%B3n%20para%20participar.">Quiero ser Tejedora de la Patria</a>
+          </article>
+          <article class="card contact-card">
+            <div>
+              <h3>¿Necesitas orientación o acompañamiento?</h3>
+              <p>El Centro LIBRE para las Mujeres de Sabinas Hidalgo brinda orientación y acompañamiento gratuito.</p>
+              <p><strong>Horario de atención de 8:00 a.m. a 4:00 p.m.</strong><br>81 1588 7607 · solo llamadas</p>
+            </div>
+            <a class="btn btn-call" href="tel:+528115887607">Llamar al Centro LIBRE</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cartilla">
+      <div class="wrap cartilla-card">
+        <div>
+          <div class="eyebrow">Conoce más</div>
+          <h2>Consulta la Cartilla de Derechos de las Mujeres</h2>
+          <p>El mural parte de los 15 derechos reunidos en la Cartilla de Derechos de las Mujeres. Puedes consultar el documento completo para conocerlos con mayor detalle.</p>
+          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://gestion.cte.sep.gob.mx/insumos/docs/2425_s6_Cartilla_de_Derechos_de_las_Mujeres_07_marzo_25.pdf">Abrir la Cartilla completa</a>
+        </div>
+        <div class="cartilla-badge">15 derechos<br>para conocer,<br>ejercer y defender</div>
+      </div>
+    </section>
+
+    <section id="creditos">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Créditos provisionales</div>
+          <h2>Detrás del mural</h2>
+          <p>Esta sección quedará abierta para completar los nombres de todas las mujeres que hicieron posible el proyecto.</p>
+        </div>
+        <div class="credits">
+          <div class="credit"><strong>Muralista</strong><br>Griselda Flores Treviño</div>
+          <div class="credit"><strong>Coordinación del proyecto</strong><br>Victoria Mireles · Coordinadora del Centro LIBRE para las Mujeres de Sabinas Hidalgo</div>
+          <div class="credit"><strong>Participó</strong><br>Voluntaria 1</div>
+          <div class="credit"><strong>Participó</strong><br>Voluntaria 2</div>
+          <div class="credit"><strong>Participaron también</strong><br>Mujeres y jóvenes participantes en los talleres</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="acercate">
+      <div class="wrap final-cta-box">
+        <div>
+          <div class="eyebrow" style="color:#ffd6e4">Este mural es una puerta de entrada</div>
+          <h2>No tienes que quedarte solo con la información. Acércate.</h2>
+          <p>Si necesitas orientación, acompañamiento psicológico, jurídico o de trabajo social, llama al Centro LIBRE para las Mujeres de Sabinas Hidalgo. La atención es gratuita. Y si quieres participar, organizarte y acercar información a más mujeres, súmate como Tejedora de la Patria.</p>
+          <p><strong>Centro LIBRE</strong> · Lunes a viernes · 8:00 a.m. a 4:00 p.m.</p>
+        </div>
+        <div class="final-cta-actions">
+          <a class="btn btn-light" href="tel:+528115887607">📞 Llamar al 81 1588 7607</a>
+          <a class="btn btn-gold" target="_blank" rel="noopener" href="https://wa.me/528241054652?text=Hola%21%20Quiero%20ser%20Tejedora%20de%20la%20Patria">💬 Quiero ser Tejedora de la Patria</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-logos">
+        <img src="logo-centro-libre.png" alt="Centro LIBRE para las Mujeres" />
+        <img src="logo-tejedoras.png" alt="Tejedoras de la Patria" />
+      </div>
+      <div class="small">Centro LIBRE para las Mujeres de Sabinas Hidalgo · Mural de Derechos de las Mujeres</div>
+    </div>
+  </footer>
+
+  <div class="floating-actions" aria-label="Acciones rápidas">
+    <a class="btn btn-call" href="tel:+528115887607">📞 Llamar al Centro</a>
+    <a class="btn btn-whatsapp" target="_blank" rel="noopener" href="https://wa.me/528241054652?text=Hola%21%20Quiero%20ser%20Tejedora%20de%20la%20Patria">💬 Ser Tejedora</a>
+  </div>
+
+</body>
+</html>
