@@ -1,0 +1,10 @@
+Sube TODOS estos archivos a la raíz del repositorio de GitHub.
+
+No borres ni vuelvas a subir los archivos que ya dejaste bien:
+- flor-01.jpg a flor-15.jpg
+- logo-centro-libre.png
+- logo-tejedoras.png
+- portada-provisional.png
+- README.md
+
+El index.html de esta carpeta ya está preparado para buscar todos los archivos directamente en la raíz del repositorio.
